@@ -25,8 +25,24 @@ void ofApp::draw(){
     
     ofRect(boxX, boxY, boxWidth, boxHeight);
     
-
-
+    ofSetPolyMode(OF_POLY_WINDING_ODD);	// this is the normal mode
+    
+    ofBeginShape();
+    ofVertex(boxX,boxY);
+    ofVertex(boxX+boxWidth,boxY+(boxHeight/4));
+    ofVertex(boxX,boxY+(boxHeight/2));
+    ofVertex(boxX+boxWidth,boxY+((boxHeight/4)*3));
+    ofVertex(boxX,boxY+boxHeight);
+    ofEndShape();
+    
+    ofBeginShape();
+    ofVertex(boxX,boxY);
+    ofVertex(boxX+(boxWidth/4),boxY+boxHeight);
+    ofVertex(boxX+(boxWidth/2),boxY);
+    ofVertex((boxX+(boxWidth/4)*3),boxY+boxHeight);
+    ofVertex(boxX+boxWidth,boxY);
+    ofEndShape();
+    
 
 }
 
