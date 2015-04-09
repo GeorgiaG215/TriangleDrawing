@@ -25,6 +25,9 @@ void ofApp::draw(){
     
     ofRect(boxX, boxY, boxWidth, boxHeight);
     
+    ofFill();
+    ofSetColor(0,0,0,100);
+    
     ofSetPolyMode(OF_POLY_WINDING_ODD);	// this is the normal mode
     
     ofBeginShape();
@@ -33,9 +36,9 @@ void ofApp::draw(){
     ofVertex(boxX,boxY+(boxHeight/2));
     ofVertex(boxX+boxWidth,boxY+((boxHeight/4)*3));
     ofVertex(boxX,boxY+boxHeight);
-    ofEndShape();
+    //ofEndShape();
     
-    ofBeginShape();
+    //ofBeginShape();
     ofVertex(boxX,boxY);
     ofVertex(boxX+(boxWidth/4),boxY+boxHeight);
     ofVertex(boxX+(boxWidth/2),boxY);
