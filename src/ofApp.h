@@ -26,5 +26,9 @@ class ofApp : public ofBaseApp{
     int boxWidth;
     
     int boxHeight;
+    
+    float nZigZagsY;
+    
+    int i;
 		
 };

@@ -7,6 +7,7 @@ void ofApp::setup(){
     //boxY = 100;
     //boxWidth = 300;
     //boxHeight = 300;
+    float nZigZagsY = boxHeight/i;
 
 }
 
@@ -21,38 +22,46 @@ void ofApp::draw(){
     ofBackground(255);
     
     ofNoFill();
-    ofSetColor(0,0,0,100);
+    ofSetColor(0x000000);
     
     ofRect(boxX, boxY, boxWidth, boxHeight);
     
+    
     ofFill();
-    ofSetColor(0,0,0,100);
+    ofSetColor(0x000000);
     
     ofSetPolyMode(OF_POLY_WINDING_ODD);	// this is the normal mode
     
+      for(int i = 4; i < 25; i++){
+    
     ofBeginShape();
     ofVertex(boxX,boxY);
-    ofVertex(boxX+boxWidth,boxY+(boxHeight/4));
-    ofVertex(boxX,boxY+(boxHeight/2));
-    ofVertex(boxX+boxWidth,boxY+((boxHeight/4)*3));
+    ofVertex(boxX+boxWidth,boxHeight+(nZigZagsY*(i+1)));
+                 
+                 //ofVertex(boxX+boxWidth,boxHeight+(nZigZagsY*3));
+    ofVertex(boxX,boxHeight+(nZigZagsY*(i-1)));
+                 
     ofVertex(boxX,boxY+boxHeight);
-    //ofEndShape();
-    
-    //ofBeginShape();
+                 
     ofVertex(boxX,boxY);
     ofVertex(boxX+(boxWidth/4),boxY+boxHeight);
     ofVertex(boxX+(boxWidth/2),boxY);
     ofVertex((boxX+(boxWidth/4)*3),boxY+boxHeight);
     ofVertex(boxX+boxWidth,boxY);
     ofEndShape();
+
+    
+    }
     
 
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    for ( key == 'a';){
+        i++;
+    }
 
-}
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
