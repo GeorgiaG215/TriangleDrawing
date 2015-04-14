@@ -27,7 +27,7 @@ class ofApp : public ofBaseApp{
     
     int boxHeight;
     
-    float nZigZagsY;
+    int nZigZagsY;
     
     int i;
 		
