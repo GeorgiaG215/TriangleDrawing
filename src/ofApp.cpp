@@ -3,13 +3,9 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    //boxX = 100;
-    //boxY = 100;
-    //boxWidth = 300;
-    //boxHeight = 300;
-    
-    int nZigZagsY = boxHeight/i;
     int i = 4;
+    
+   int nZigZagsY = mouseX/i;
 
 }
 
@@ -36,11 +32,11 @@ void ofApp::draw(){
     ofSetPolyMode(OF_POLY_WINDING_ODD);	// this is the normal mode
     
     
-      //for(int i = 4; i < 25; i++){
+      for(int i=4; i<25; i++){
     
           ofBeginShape();
           ofVertex(boxX,boxY);
-          ofVertex(boxX+boxWidth,boxY+(boxHeight/4));
+          ofVertex(boxX+boxWidth,boxY+nZigZagsY);
           ofVertex(boxX,boxY+(boxHeight/2));
           ofVertex(boxX+boxWidth,boxY+((boxHeight/4)*3));
           ofVertex(boxX,boxY+boxHeight);
@@ -50,7 +46,8 @@ void ofApp::draw(){
           ofVertex((boxX+(boxWidth/4)*3),boxY+boxHeight);
           ofVertex(boxX+boxWidth,boxY);
           ofEndShape();
-//}
+
+    }
     
     cout << nZigZagsY;
 
@@ -59,7 +56,7 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     //for ( key == 'a';){
-        i++; }
+        //i++; }
     }
 
 
